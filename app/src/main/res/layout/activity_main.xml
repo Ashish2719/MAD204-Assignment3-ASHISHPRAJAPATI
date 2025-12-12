@@ -1,19 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Username" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Dark theme" />
+
+            <Switch
+                android:id="@+id/swTheme"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSavePrefs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save preferences" />
+
+        <TextView
+            android:id="@+id/tvUsernameInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username:" />
+
+        <TextView
+            android:id="@+id/tvThemeInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Theme:" />
+
+        <Button
+            android:id="@+id/btnAddNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add note" />
+
+        <Button
+            android:id="@+id/btnExportJson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Export JSON" />
+
+        <Button
+            android:id="@+id/btnImportJson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Import JSON" />
+
+        <Button
+            android:id="@+id/btnBackupFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save backup.txt" />
+
+        <Button
+            android:id="@+id/btnLoadBackup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Load backup.txt" />
+
+        <Button
+            android:id="@+id/btnStartReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start reminder" />
+
+        <TextView
+            android:id="@+id/tvBackupContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Backup content" />
+
+        <TextView
+            android:id="@+id/tvNotesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All notes"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNotes"
+            android:layout_width="match_parent"
+            android:layout_height="98dp" />
+
+        <TextView
+            android:id="@+id/tvFavoritesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favorites"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    </LinearLayout>
+</ScrollView>
